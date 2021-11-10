@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../environments/environment';
 
 //Observable
 import { Observable } from 'rxjs';
@@ -10,7 +11,7 @@ import { map, tap } from "rxjs/operators";
 })
 export class PokeApiService {
 
-  private url: string = 'https://pokeapi.co/api/v2/pokemon/?offset=0&limit=898';
+  private url: string = environment.urlApi;
 
   constructor(
     private http: HttpClient
