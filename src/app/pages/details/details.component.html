@@ -8,14 +8,14 @@
       <h1 class="slideInLeft">{{pokemon[0].name}}</h1>
       <h2 class="slideInRight">{{pokemon[1].names[0].name}}</h2>
     </section>
-
+    <!-- pokemon[0].sprites.other.dream_world.front_default -->
     <section class="pokemon__status">
       <img
-        [src]="pokemon[0].sprites.other.dream_world.front_default"
+        [src]="pokemon[0].sprites.other.home.front_default"
         [alt]="pokemon[0].name"
         class="slideInDown"
       >
-
+      
       <article class="pokemon__status__statistics fadeIn">
         <section>
           <h3>Estadísticas</h3>
