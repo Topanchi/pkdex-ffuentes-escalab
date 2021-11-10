@@ -14,11 +14,11 @@ export class PokeApiService {
   private url: string = environment.urlApi;
 
   constructor(
-    private http: HttpClient
+    private _httpClient: HttpClient
   ) { }
 
   get apiListAllPokemons():Observable<any>{
-    return this.http.get<any>(this.url).pipe(
+    return this._httpClient.get<any>(this.url).pipe(
       tap( res => res ),
       tap( res => {
         res.results.map( (resPokemons: any) => {
@@ -33,7 +33,7 @@ export class PokeApiService {
   }
 
   public apiGetPokemon( url: string ):Observable<any>{
-    return this.http.get<any>( url ).pipe(
+    return this._httpClient.get<any>( url ).pipe(
       map(
         res => res
       )
