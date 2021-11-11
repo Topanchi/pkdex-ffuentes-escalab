@@ -4,6 +4,7 @@ import { forkJoin } from 'rxjs';
 
 //Services
 import { PokeApiService } from 'src/app/service/poke-api.service';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-details',
@@ -12,8 +13,8 @@ import { PokeApiService } from 'src/app/service/poke-api.service';
 })
 export class DetailsComponent implements OnInit {
 
-  private urlPokemon: string = 'https://pokeapi.co/api/v2/pokemon';
-  private urlName: string = 'https://pokeapi.co/api/v2/pokemon-species';
+  private pkm: string = environment.urlPokemon;
+  private name: string = environment.urlName;
 
   public pokemon: any;
   public isLoading: boolean = false;
@@ -30,8 +31,8 @@ export class DetailsComponent implements OnInit {
 
   public getPokemon(){
     const id = this.activatedRoute.snapshot.params['id'];
-    const pokemon = this._pokeApiService.apiGetPokemon(`${this.urlPokemon}/${id}`);
-    const name = this._pokeApiService.apiGetPokemon(`${this.urlName}/${id}`);
+    const pokemon = this._pokeApiService.apiGetPokemon(`${this.pkm}/${id}`);
+    const name = this._pokeApiService.apiGetPokemon(`${this.name}/${id}`);
 
     return forkJoin([pokemon, name]).subscribe(
       res => {

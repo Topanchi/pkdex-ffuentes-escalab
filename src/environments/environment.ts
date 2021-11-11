@@ -4,7 +4,9 @@
 
 export const environment = {
   production: false,
-  urlApi: "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=898"
+  urlApi: 'https://pokeapi.co/api/v2/pokemon/?offset=0&limit=898',
+  urlPokemon: 'https://pokeapi.co/api/v2/pokemon',
+  urlName: 'https://pokeapi.co/api/v2/pokemon-species'
 };
 
 /*

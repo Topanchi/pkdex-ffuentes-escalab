@@ -16,25 +16,30 @@
         class="slideInDown"
       >
       
-      <article class="pokemon__status__statistics fadeIn">
+     <article class="pokemon__status__statistics fadeIn">
         <section>
           <h3>Estadísticas</h3>
 
           <ol>
             <li *ngFor="let value of pokemon[0].stats">
-                {{ value.stat.name }}
-
+              {{ value.stat.name }}
               <strong>
                 {{ value.base_stat }}
               </strong>
             </li>
           </ol>
         </section>
-
         <a [routerLink]="['']" class="btn btn__secondary">
           Volver
         </a>
       </article>
+    </section>
+    <section class="pokemon__status">
+      <img
+        [src]="pokemon[0].sprites.other.home.front_shiny"
+        [alt]="pokemon[0].name"
+        class="slideInRight"
+      >
     </section>
   </ng-template>
 
